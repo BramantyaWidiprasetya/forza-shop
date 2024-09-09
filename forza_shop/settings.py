@@ -51,7 +51,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'forza_shop.urls'
-
+## test bos
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
