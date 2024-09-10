@@ -287,7 +287,7 @@
 
 ### 2) Bagan request client ke web aplikasi
 
-![Bagan request & response Django](https://media.discordapp.net/attachments/1282983858366709760/1282983954428727297/image.png?format=webp&quality=lossless&width=825&height=463)
+![Bagan request & response Django](https://media.discordapp.net/attachments/1282983858366709760/1282983954428727297/image.png?ex=66e1576b&is=66e005eb&hm=517619d624477fa55cb868d4a1212506b33e854c7b3291eb4ed0586939663fe0&=&format=webp&quality=lossless&width=1428&height=994)
 
 
 1.  **Client Request**: _Request_ dimulai dari klien (browser atau aplikasi lain dari pengguna) yang mengirimkan permintaan ke server.
