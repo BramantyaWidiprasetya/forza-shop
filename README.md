@@ -287,6 +287,9 @@
 
 ### 2) Bagan request client ke web aplikasi
 
+![Bagan request & response Django](https://media.discordapp.net/attachments/1282983858366709760/1282983954428727297/image.png?format=webp&quality=lossless&width=825&height=463)
+
+
 1.  **Client Request**: _Request_ dimulai dari klien (browser atau aplikasi lain dari pengguna) yang mengirimkan permintaan ke server.
 2.  **urls.py**: Berkas ini berfungsi sebagai pengarah lalu lintas dalam aplikasi Django atau _routing_. Berkas ini yang menentukan URL mana yang perlu dipanggil dan view mana yang menanganinya. Ketika ada permintaan yang diterima, Django akan mencocokan URL dari permintaan dengan URL yang didefinisikan di `urls.py`.
 3.  **views.py**: Setelah `urls.py` menentukan view mana yang harus merespons, kontrol dialihkan ke fungsi atau kelas di berkas `views.py`.
