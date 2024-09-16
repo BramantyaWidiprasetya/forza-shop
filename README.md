@@ -337,3 +337,45 @@ Berikut adalah beberapa alasan mengapa model Django disebut sebagai ORM:
 3.  **Portabilitas**: Kode yang menggunakan ORM lebih portabel. Artinya, aplikasi Django dapat beralih antar jenis database dengan perubahan konfigurasi minimal.
 4.  **Keamanan**: ORM juga membantu dalam meningkatkan keamanan aplikasi. Penggunaan ORM mengurangi risiko serangan injeksi SQL, karena kueri yang dibangun melalui ORM lebih terstruktur dan dikontrol ketat oleh sistem.
 5.  **Efisiensi Pengembangan**: Menggunakan ORM mempercepat proses pengembangan karena mengurangi jumlah kode yang perlu ditulis dan diuji. Ini juga membantu dalam memelihara kode yang lebih bersih dan lebih mudah untuk dimengerti dengan menggunakan hanya satu bahasa.
+
+
+## Tugas 3
+
+### 1) Mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+
+Data delivery dibutuhkan dalam pengimplementasian platform untuk mengirimkan dan menerima data antara server dan klien, baik untuk pertukaran informasi antar sistem atau menampilkan data di frontend. Dengan data delivery, platform dapat berfungsi dinamis dan interaktif, memungkinkan pengguna untuk mengakses, mengirim, dan menyimpan informasi secara efisien.
+
+### 2) Mana yang lebih baik antara XML dan JSON? Mengapa JSON lebih populer dibandingkan XML?
+
+Mana yang lebih baik tergantung pada kebutuhan spesifik. XML lebih baik dalam menangani struktur yang kompleks dengan skema yang jelas, sedangkan JSON lebih sederhana dan lebih ringan. JSON lebih populer dibandingkan XML karena lebih mudah dibaca dan ditulis oleh manusia, memiliki ukuran yang lebih kecil, dan lebih cepat diakses dalam banyak aplikasi web modern. Selain itu, JSON juga lebih mudah diintegrasikan dengan JavaScript, yang banyak digunakan dalam pengembangan aplikasi berbasis web.
+
+### 3) Jelaskan fungsi dari method is_valid() pada form Django dan mengapa kita membutuhkan method tersebut?
+
+Method is_valid() pada form Django digunakan untuk memvalidasi data yang diinputkan pengguna berdasarkan aturan yang ditentukan dalam model atau form. Kita membutuhkan method ini untuk memastikan bahwa data yang diinput memenuhi kriteria yang diharapkan (seperti panjang karakter, tipe data, dll.) sebelum disimpan ke database. Jika validasi gagal, form akan mengembalikan pesan error yang dapat ditampilkan kepada pengguna.
+
+### 4) Mengapa kita membutuhkan csrf_token saat membuat form di Django? Apa yang dapat terjadi jika kita tidak menambahkan csrf_token pada form Django? Bagaimana hal tersebut dapat dimanfaatkan oleh penyerang?
+
+CSRF (Cross-Site Request Forgery) token dibutuhkan untuk mencegah serangan CSRF, di mana penyerang dapat memalsukan permintaan dari pengguna yang sudah diautentikasi. Jika kita tidak menambahkan csrf_token pada form Django, aplikasi kita rentan terhadap serangan ini, di mana penyerang dapat mengirimkan permintaan yang tidak sah atas nama pengguna tanpa sepengetahuan mereka. Serangan ini dapat dimanfaatkan untuk mengambil alih akun pengguna, memodifikasi data, atau melakukan aksi berbahaya lainnya.
+
+### 5) Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+Berikut langkah-langkah implementasi checklist:
+
+1. Membuat form input: Saya membuat file forms.py di dalam direktori main dan mendefinisikan BuyEntryForm untuk menerima input dari model BuyEntry. Kemudian, di dalam views.py, saya membuat fungsi create_Buy_entry yang menangani form ini dan menambahkan data ke database saat validasi berhasil.
+
+2. Menambahkan views baru untuk XML dan JSON: Saya menambahkan dua fungsi di views.py, yaitu show_xml dan show_json, yang masing-masing mengembalikan data dalam format XML dan JSON. Saya juga menambahkan versi by ID untuk setiap format dengan membuat show_xml_by_id dan show_json_by_id.
+
+3. Routing URL: Di urls.py, saya membuat routing untuk setiap view baru (XML, JSON, XML by ID, dan JSON by ID) dengan menambahkan path ke masing-masing fungsi view.
+
+4. Postman untuk tes data: Setelah mengimplementasikan semua views, saya menggunakan Postman untuk memastikan data dikirim dan diterima dengan benar dalam format XML dan JSON melalui permintaan GET ke endpoint yang sudah dibuat. 
+
+
+### 5) Mengakses keempat URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman
+
+![XML] (https://media.discordapp.net/attachments/1282983858366709760/1285263799842242611/Screenshot_2024-09-16_223805.png?ex=66e9a2b0&is=66e85130&hm=14e43e94efefac8ac9e72350554a63803de163c3b92b857a07c1b1af2c178180&=&format=webp&quality=lossless&width=1386&height=994)
+
+![JSON] (https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
+
+![XMLByID] (https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
+
+![JSONByID] (https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
