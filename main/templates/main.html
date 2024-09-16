@@ -1,10 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
 <h1>Forza Shops</h1>
 
-...
 <h5>Name: </h5>
 <p>{{ name }}<p>
-<h5>Price: </h5>
-<p>{{ price }}<p>
-<h5>Description: </h5>
-<p>{{ description }}<p>
-...
+
+<h5>Price:</h5>
+<p>{{ price }}</p>
+
+<h5>Description:</h5>
+<p>{{ description }}</p>
+
+{% if not buy_entries %}
+<p>Belum ada data buy pada forza shops.</p>
+{% else %}
+<table>
+  <tr>
+    <th>Buy Name</th>
+    <th>Time</th>
+    <th>Address</th>
+    <th>Age</th>
+  </tr>
+
+  {% comment %} Berikut cara memperlihatkan data buy di bawah baris ini 
+  {% endcomment %} 
+  {% for buy_entry in buy_entries %}
+  <tr>
+    <td>{{buy_entry.buy}}</td>
+    <td>{{buy_entry.time}}</td>
+    <td>{{buy_entry.address}}</td>
+    <td>{{buy_entry.age}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+<br />
+
+<a href="{% url 'main:create_buy_entry' %}">
+  <button>Add New Buy Entry</button>
+</a>
+
+{% endblock content %}
