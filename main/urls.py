@@ -7,4 +7,4 @@ urlpatterns = [
     path('', show_main, name='show_main'),
 ]
 
-#checking pws
+#checking pws part 1
