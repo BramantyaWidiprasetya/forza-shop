@@ -372,10 +372,10 @@ Berikut langkah-langkah implementasi checklist:
 
 ### 5) Mengakses keempat URL di poin 2 menggunakan Postman, membuat screenshot dari hasil akses URL pada Postman
 
-![XML] (https://media.discordapp.net/attachments/1282983858366709760/1285263799842242611/Screenshot_2024-09-16_223805.png?ex=66e9a2b0&is=66e85130&hm=14e43e94efefac8ac9e72350554a63803de163c3b92b857a07c1b1af2c178180&=&format=webp&quality=lossless&width=1386&height=994)
+![XML](https://media.discordapp.net/attachments/1282983858366709760/1285263799842242611/Screenshot_2024-09-16_223805.png?ex=66e9a2b0&is=66e85130&hm=14e43e94efefac8ac9e72350554a63803de163c3b92b857a07c1b1af2c178180&=&format=webp&quality=lossless&width=1386&height=994)
 
-![JSON] (https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
+![JSON](https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
 
-![XMLByID] (https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
+![XMLByID](https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
 
-![JSONByID] (https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
+![JSONByID](https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
