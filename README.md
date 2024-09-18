@@ -374,8 +374,8 @@ Berikut langkah-langkah implementasi checklist:
 
 ![XML](https://media.discordapp.net/attachments/1282983858366709760/1285263799842242611/Screenshot_2024-09-16_223805.png?ex=66e9a2b0&is=66e85130&hm=14e43e94efefac8ac9e72350554a63803de163c3b92b857a07c1b1af2c178180&=&format=webp&quality=lossless&width=1386&height=994)
 
-![JSON](https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66e9a2b0&is=66e85130&hm=f0b9f31913fca9e7f00dc5331f1d4c1c3e357f62d287fae16c20d1af832aaaff&=&format=webp&quality=lossless&width=1376&height=994)
+![JSON](https://media.discordapp.net/attachments/1282983858366709760/1285263799489663069/Screenshot_2024-09-16_223819.png?ex=66eb9cf0&is=66ea4b70&hm=4ebfcdc712c72d8e59f4b54120e53efc0f9dd5c5892c414980b495be3154df5e&=&format=webp&quality=lossless&width=1376&height=994)
 
 ![XMLByID](https://media.discordapp.net/attachments/1282983858366709760/1285263799095656448/Screenshot_2024-09-16_223838.png?ex=66e9a2b0&is=66e85130&hm=3beee59d01b259cc278f9df787f6df388c17247371b22c51a8bce6286202321e&=&format=webp&quality=lossless&width=1368&height=994)
 
-![JSONByID](https://media.discordapp.net/attachments/1282983858366709760/1285263798650933320/Screenshot_2024-09-16_223857.png?ex=66e9a2b0&is=66e85130&hm=d717084e0d329059eeb5d93059b620b2fb7e5fc4cbbe2848512e988fdefc31fa&=&format=webp&quality=lossless&width=1370&height=994)
+![JSONByID](https://media.discordapp.net/attachments/1282983858366709760/1285263798650933320/Screenshot_2024-09-16_223857.png?ex=66eb9cf0&is=66ea4b70&hm=6eb2793c719e317d8dd8efce525948cd891998def6500b11d2f704d893f766d8&=&format=webp&quality=lossless&width=1370&height=994)
