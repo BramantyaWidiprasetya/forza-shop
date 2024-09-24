@@ -5,31 +5,31 @@
 <h5>Name: </h5>
 <p>{{ name }}<p>
 
-<h5>Price:</h5>
-<p>{{ price }}</p>
+<h5>NPM:</h5>
+<p>{{ npm }}</p>
 
-<h5>Description:</h5>
-<p>{{ description }}</p>
+<h5>Class:</h5>
+<p>{{ class }}</p>
 
-{% if not buy_entries %}
-<p>Belum ada data buy pada forza shops.</p>
+{% if not product_entries %}
+<p>Belum ada data product pada forza shops.</p>
 {% else %}
 <table>
   <tr>
-    <th>Buy Name</th>
+    <th>Name</th>
     <th>Time</th>
-    <th>Address</th>
-    <th>Age</th>
+    <th>Price</th>
+    <th>Description</th>
   </tr>
 
-  {% comment %} Berikut cara memperlihatkan data buy di bawah baris ini 
+  {% comment %} Berikut cara memperlihatkan data product di bawah baris ini 
   {% endcomment %} 
-  {% for buy_entry in buy_entries %}
+  {% for product_entry in product_entries %}
   <tr>
-    <td>{{buy_entry.name}}</td>
-    <td>{{buy_entry.time}}</td>
-    <td>{{buy_entry.address}}</td>
-    <td>{{buy_entry.age}}</td>
+    <td>{{product_entry.name}}</td>
+    <td>{{product_entry.time}}</td>
+    <td>{{product_entry.price}}</td>
+    <td>{{product_entry.description}}</td>
   </tr>
   {% endfor %}
 </table>
@@ -37,8 +37,8 @@
 
 <br />
 
-<a href="{% url 'main:create_buy_entry' %}">
-  <button>Add New Buy Entry</button>
+<a href="{% url 'main:create_product' %}">
+  <button>Add New Prodoct</button>
 </a>
 
 {% endblock content %}
