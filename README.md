@@ -785,7 +785,7 @@ DEBUG = not PRODUCTION
 1. Akun Pertama
 ![AKUN1](https://media.discordapp.net/attachments/1282983858366709760/1288352836249452575/Screenshot_2024-09-25_111119.png?ex=66f4df94&is=66f38e14&hm=8402b5e4ba151f29f09c056d146a05d1e651cc308234722bff1e53d8d58448ea&=&format=webp&quality=lossless&width=1590&height=994)
 
-![AKUN1ISI](https://media.discordapp.net/attachments/1282983858366709760/1288352834286518343/Screenshot_2024-09-25_111335.png?ex=66f4df94&is=66f38e14&hm=8b14e7a5672df3402099ac3bca27125c364f099092d2ca0da9cee8679abfef8f&=&format=webp&quality=lossless&width=1590&height=994)
+![AKUN1ISI](https://media.discordapp.net/attachments/1282983858366709760/1288352835649409065/Screenshot_2024-09-25_111128.png?ex=66f4df94&is=66f38e14&hm=16eb8138bf9b4d03614cd75a250d376637dca5c79b43ac24218a69124ad7c4ce&=&format=webp&quality=lossless&width=1590&height=994)
 
 ![AKUN2](https://media.discordapp.net/attachments/1282983858366709760/1288352834927984662/Screenshot_2024-09-25_111223.png?ex=66f4df94&is=66f38e14&hm=c863ddad380cf050c838db4fe2dee2dfa3adbe0d3851514a540158985dc83a3e&=&format=webp&quality=lossless&width=1590&height=994)
 
