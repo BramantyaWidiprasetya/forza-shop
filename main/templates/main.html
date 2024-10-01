@@ -1,50 +1,49 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block meta %}
+<title>Forza Shop</title>
+{% endblock meta %}
 {% block content %}
-<h1>Forza Shops</h1>
-
-<h5>Name: </h5>
-<p>{{ name }}<p>
-
-<h5>NPM:</h5>
-<p>{{ npm }}</p>
-
-<h5>Class:</h5>
-<p>{{ class }}</p>
-
-{% if not product_entries %}
-<p>Belum ada data product pada forza shops.</p>
-{% else %}
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Time</th>
-    <th>Price</th>
-    <th>Description</th>
-  </tr>
-
-  {% comment %} Berikut cara memperlihatkan data product di bawah baris ini 
-  {% endcomment %} 
-  {% for product_entry in product_entries %}
-  <tr>
-    <td>{{product_entry.name}}</td>
-    <td>{{product_entry.time}}</td>
-    <td>{{product_entry.price}}</td>
-    <td>{{product_entry.description}}</td>
-  </tr>
-  {% endfor %}
-</table>
-{% endif %}
-
-<br />
-
-<a href="{% url 'main:create_product' %}">
-  <button>Add New Prodoct</button>
-</a>
-
-<a href="{% url 'main:logout' %}">
-  <button>Logout</button>
-</a>
-
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-
+{% include 'navbar.html' %}
+<div class="overflow-x-hidden px-4 md:px-8 pb-8 pt-24 min-h-screen bg-black flex flex-col">
+  <div class="p-2 mb-6 relative">
+    <div class="relative grid grid-cols-1 z-30 md:grid-cols-3 gap-8">
+      {% include "card_info.html" with title='NPM' value=npm %}
+      {% include "card_info.html" with title='Name' value=name %}
+      {% include "card_info.html" with title='Class' value=class %}
+    </div>
+    <div class="w-full px-6  absolute top-[44px] left-0 z-20 hidden md:flex">
+      <div class="w-full min-h-4 bg-green-700">
+      </div>
+    </div>
+    <div class="h-full w-full py-6  absolute top-0 left-0 z-20 md:hidden flex ">
+      <div class="h-full min-w-4 bg-green-700 mx-auto">
+      </div>
+    </div>
+</div>
+    <div class="px-3 mb-4">
+      <div class="flex rounded-md items-center bg-green-600 py-2 px-4 w-fit">
+        <h1 class="text-white text-center">Last Login: {{last_login}}</h1>
+      </div>
+    </div>
+    <div class="flex justify-end mb-6">
+        <a href="{% url 'main:create_product' %}" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+            Add New Product
+        </a>
+    </div>
+    
+    {% if not product_entries %}
+    <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
+        <img src="{% static 'image/sedih-banget.png' %}" alt="Sad face" class="w-32 h-32 mb-4"/>
+        <p class="text-center text-gray-600 mt-4">Belum ada product yang tersimpan pada Forza Shop.</p>
+    </div>
+    {% else %}
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 w-full">
+        {% for product_entry in product_entries %}
+            {% include 'card_product.html' with product_entry=product_entry %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
 {% endblock content %}
