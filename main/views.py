@@ -118,17 +118,15 @@ def delete_product(request, id):
 @csrf_exempt
 @require_POST
 def add_product_ajax(request):
-    product = strip_tags(request.POST.get("name"))
+    name = strip_tags(request.POST.get("name"))
     description = strip_tags(request.POST.get("description"))
     price = request.POST.get("price")
     user = request.user
 
     new_product = Product(
-        product=product, description=description,
+        name=name, description=description,
         price=price, user=user
     )
     new_product.save()
 
     return HttpResponse(b"CREATED", status=201)
-
-
