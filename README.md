@@ -810,4 +810,75 @@ Saya telah berhasil mengimplementasikan seluruh item yang tercantum dalam checkl
 
 Pada bagian daftar product, saya mengatasi dua kondisi: ketika belum ada product yang terdaftar, halaman akan menampilkan pesan informatif serta gambar, dan ketika ada product yang terdaftar, saya menampilkan detail setiap product menggunakan desain card yang telah saya buat sendiri (berbeda dari desain tutorial sebelumnya). Saya juga menambahkan dua tombol pada setiap card, yang memungkinkan pengguna untuk mengedit atau menghapus product secara langsung dari card tersebut. Selain itu, saya juga merancang navigation bar (navbar) untuk fitur-fitur utama aplikasi, memastikan bahwa navbar ini responsif dan bisa beradaptasi dengan berbagai ukuran perangkat, baik pada layar mobile maupun desktop, sehingga memberikan pengalaman pengguna yang lebih baik secara keseluruhannya.
 
-testing
+## Tugas 6
+
+### 1. 
+
+JavaScript memiliki banyak manfaat dalam pengembangan aplikasi web, di antaranya:
+
+1. **Interaktivitas Dinamis**: JavaScript memungkinkan elemen interaktif seperti tombol, formulir, dan animasi yang merespons tindakan pengguna, menjadikan aplikasi web lebih menarik dan intuitif.
+2. **Pengolahan Data di Sisi Klien**: Dengan JavaScript, data dapat dimanipulasi di sisi klien tanpa perlu berulang kali mengirim permintaan ke server, sehingga meningkatkan efisiensi.
+3. **Pengembangan Asynchronous (AJAX)**: JavaScript mendukung komunikasi asinkron dengan server menggunakan AJAX, sehingga data dapat diperbarui tanpa harus memuat ulang halaman.
+4. **Kompatibilitas Multi-Platform**: JavaScript berjalan di hampir semua browser modern tanpa instalasi tambahan, menjadikannya ideal untuk pengembangan aplikasi web multi-platform.
+5. **Mendukung Pengembangan Full-Stack**: JavaScript dapat digunakan di sisi klien dan server dengan framework seperti Node.js, memungkinkan pengembangan full-stack dengan satu bahasa pemrograman.
+
+### 2.
+
+Ketika menggunakan `fetch()`, fungsi ini mengembalikan *promise* yang memerlukan waktu untuk menyelesaikan permintaan ke server. `await` digunakan untuk menunggu *promise* tersebut selesai sebelum melanjutkan eksekusi kode. Dengan `await`, penulisan kode menjadi lebih sinkron dan mudah dibaca.
+
+Contoh:
+```javascript
+async function getData() {
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
+  console.log(data);
+}
+```
+
+Jika `await` tidak digunakan, `fetch()` akan langsung mengembalikan *promise*, dan kode berikutnya akan dieksekusi sebelum respons selesai, yang bisa menyebabkan kesalahan dalam pemrosesan data.
+
+### 3.
+
+Decorator `csrf_exempt` digunakan untuk menonaktifkan mekanisme perlindungan **Cross-Site Request Forgery (CSRF)** pada Django. Berikut alasannya:
+
+1. **Token CSRF Diperlukan**: Secara default, Django memerlukan token CSRF untuk semua permintaan POST. AJAX POST juga harus menyertakan token ini.
+2. **Mempermudah Permintaan AJAX**: Jika AJAX POST tidak memerlukan token CSRF (misalnya untuk API publik), `csrf_exempt` dapat digunakan untuk mem-bypass pengecekan token CSRF.
+3. **Framework Eksternal**: Beberapa framework front-end seperti React atau Vue.js tidak menangani token CSRF secara otomatis. `csrf_exempt` membantu menghindari kesalahan terkait token CSRF pada permintaan POST dari framework tersebut.
+
+Jika `csrf_exempt` tidak digunakan dan AJAX POST tidak mengirimkan token CSRF, Django akan mengembalikan error 403 (Forbidden).
+
+### 4.
+
+Pembersihan data input di **backend** diperlukan karena:
+
+1. **Keamanan yang Lebih Komprehensif**: Pengguna yang berniat jahat bisa memanipulasi permintaan HTTP dan melewati validasi di frontend. Oleh karena itu, backend harus memvalidasi semua input untuk mencegah serangan XSS atau SQL Injection.
+2. **Integritas Data**: Pembersihan di backend memastikan bahwa data yang tersimpan di database aman, meskipun frontend telah memvalidasi input.
+3. **Tidak Mengandalkan Klien**: Validasi di frontend dapat diabaikan oleh pengguna yang memodifikasi klien mereka. Backend harus memverifikasi keamanan data secara mandiri.
+
+### 5.
+
+#### Checklist 1: Menampilkan Card Product dengan AJAX GET
+- Ubah fungsi `show_main` untuk tidak langsung mengirimkan produk dari view, dan modifikasi fungsi `show_json` untuk mengirim data produk milik pengguna yang sedang login.
+- Hapus blok conditional dan ganti dengan elemen div `#product_entry_cards` yang kosong.
+- Tambahkan script untuk melakukan `fetch()` ke URL `show_json` dan memuat produk dengan AJAX.
+
+#### Checklist 2: Pengambilan Data dengan AJAX GET
+- Tambahkan kode untuk memuat data produk milik pengguna yang sedang login menggunakan AJAX GET dan tampilkan produk dalam bentuk cards yang dinamis.
+
+#### Checklist 3: Tombol untuk Membuka Modal dengan Form Penambahan Produk
+- Tambahkan tombol yang membuka modal form penambahan produk, yang memanfaatkan AJAX POST untuk menyimpan produk baru.
+
+#### Checklist 4: Fungsi View untuk Menambahkan Produk
+- Buat fungsi view `create_product_ajax` di backend yang memproses form data produk baru dan menyimpan data ke database.
+
+#### Checklist 5: Path `/create-ajax/`
+- Tambahkan path `/create-ajax/` di `urls.py` yang mengarah ke fungsi `create_product_ajax`.
+
+#### Checklist 6: Hubungkan Form Modal ke Path `/create-ajax/`
+- Buat modal dengan form penambahan produk dan hubungkan form tersebut ke path `/create-ajax/` untuk mengirim data dengan AJAX POST.
+
+#### Checklist 7: Refresh Asinkron
+- Lakukan refresh asinkron pada halaman utama setelah produk ditambahkan tanpa memuat ulang halaman.
+
+#### Addition: Pencegahan XSS
+- Gunakan `DOMPurify` untuk membersihkan data yang akan ditampilkan di halaman dan lakukan validasi input di backend untuk menghindari serangan XSS.
