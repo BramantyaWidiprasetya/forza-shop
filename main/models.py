@@ -9,3 +9,5 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     price = models.IntegerField()  # Remove max_length, as it's not needed for IntegerField
     description = models.TextField()  # Add parentheses to correctly define the field
+
+    

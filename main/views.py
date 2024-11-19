@@ -2,7 +2,7 @@ import json
 from django.shortcuts import render, redirect, reverse
 from main.forms import ProductEntryForm
 from main.models import Product
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.core import serializers
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
@@ -16,8 +16,8 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.utils.html import strip_tags
-
-
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
 
 
 
@@ -40,7 +40,6 @@ def show_main(request):
         'name': request.user.username,
         'npm': '2306245604',
         'class': 'F',
-
         'last_login': request.COOKIES['last_login'],
     }
 
@@ -127,7 +126,8 @@ def add_product_ajax(request):
 
     new_product = Product(
         name=name, description=description,
-        price=price, user=user
+        price=price, 
+        user=user
     )
     new_product.save()
 
